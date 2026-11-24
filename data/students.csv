@@ -1,0 +1,26 @@
+student_id,name,programme,year,mentor_name
+STU-001,Priya Menon,BSc Computer Science,3,Dr. Anand Rao
+STU-002,James Okafor,BSc Data Science,1,Prof. Sarah Mitchell
+STU-003,Sofia Reyes,BEng Software Engineering,1,Dr. James Chen
+STU-004,Tom Brinkley,BSc Artificial Intelligence,3,Ms. Priya Kapoor
+STU-005,Anika Sharma,BSc Computer Science,2,Mr. David Osei
+STU-006,Rahul Nair,BSc Data Science,1,Dr. Anand Rao
+STU-007,Chloe Bennett,BEng Software Engineering,1,Prof. Sarah Mitchell
+STU-008,Mohammed Al-Farsi,BSc Artificial Intelligence,1,Dr. James Chen
+STU-009,Divya Krishnan,BSc Computer Science,3,Ms. Priya Kapoor
+STU-010,Ethan Clarke,BSc Data Science,1,Mr. David Osei
+STU-011,Neha Patel,BEng Software Engineering,3,Dr. Anand Rao
+STU-012,Lucas Fernandez,BSc Artificial Intelligence,3,Prof. Sarah Mitchell
+STU-013,Yuna Kim,BSc Computer Science,3,Dr. James Chen
+STU-014,Samuel Adeola,BSc Data Science,1,Ms. Priya Kapoor
+STU-015,Ishaan Bose,BEng Software Engineering,3,Mr. David Osei
+STU-016,Emily Walsh,BSc Artificial Intelligence,2,Dr. Anand Rao
+STU-017,Arjun Mehta,BSc Computer Science,1,Prof. Sarah Mitchell
+STU-018,Fatima Zahra,BSc Data Science,1,Dr. James Chen
+STU-019,Dylan Hughes,BEng Software Engineering,1,Ms. Priya Kapoor
+STU-020,Kavya Reddy,BSc Artificial Intelligence,1,Mr. David Osei
+STU-021,Noah Kim,BSc Computer Science,1,Dr. Anand Rao
+STU-022,Tanvi Joshi,BSc Data Science,3,Prof. Sarah Mitchell
+STU-023,Oliver Grant,BEng Software Engineering,3,Dr. James Chen
+STU-024,Shreya Das,BSc Artificial Intelligence,1,Ms. Priya Kapoor
+STU-025,Liam O'Brien,BSc Computer Science,3,Mr. David Osei

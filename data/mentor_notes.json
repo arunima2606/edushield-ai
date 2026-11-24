@@ -1,0 +1,452 @@
+[
+  {
+    "student_id": "STU-001",
+    "date": "2025-09-12",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student failed to attend scheduled mentor meeting. Repeated absences are a serious concern."
+  },
+  {
+    "student_id": "STU-001",
+    "date": "2025-10-24",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student expressed feeling overwhelmed. Struggling to keep up with coursework. Immediate support recommended."
+  },
+  {
+    "student_id": "STU-001",
+    "date": "2025-10-29",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Meeting held \u2014 student appears disengaged and anxious about upcoming assessments. Not submitted last assignment."
+  },
+  {
+    "student_id": "STU-002",
+    "date": "2025-10-10",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student expressed feeling overwhelmed. Struggling to keep up with coursework. Immediate support recommended."
+  },
+  {
+    "student_id": "STU-002",
+    "date": "2025-11-05",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student failed to attend scheduled mentor meeting. Repeated absences are a serious concern."
+  },
+  {
+    "student_id": "STU-002",
+    "date": "2025-11-07",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student has missed 2 consecutive sessions with no explanation provided. Performance is concerning."
+  },
+  {
+    "student_id": "STU-003",
+    "date": "2025-09-10",
+    "mentor_name": "Dr. James Chen",
+    "note": "Student has missed 3 consecutive sessions with no explanation provided. Performance is concerning."
+  },
+  {
+    "student_id": "STU-003",
+    "date": "2025-10-17",
+    "mentor_name": "Dr. James Chen",
+    "note": "Student expressed feeling overwhelmed. Struggling to keep up with coursework. Immediate support recommended."
+  },
+  {
+    "student_id": "STU-003",
+    "date": "2025-10-31",
+    "mentor_name": "Dr. James Chen",
+    "note": "Meeting held \u2014 student appears disengaged and anxious about upcoming assessments. Not submitted last assignment."
+  },
+  {
+    "student_id": "STU-004",
+    "date": "2025-09-03",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student has missed 5 consecutive sessions with no explanation provided. Performance is concerning."
+  },
+  {
+    "student_id": "STU-004",
+    "date": "2025-09-26",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Meeting held \u2014 student appears disengaged and anxious about upcoming assessments. Not submitted last assignment."
+  },
+  {
+    "student_id": "STU-004",
+    "date": "2025-10-03",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Raised with student welfare team. Student is withdrawn and falling behind on all modules."
+  },
+  {
+    "student_id": "STU-005",
+    "date": "2025-09-01",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student has missed 4 consecutive sessions with no explanation provided. Performance is concerning."
+  },
+  {
+    "student_id": "STU-005",
+    "date": "2025-10-08",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student failed to attend scheduled mentor meeting. Repeated absences are a serious concern."
+  },
+  {
+    "student_id": "STU-005",
+    "date": "2025-10-24",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student expressed feeling overwhelmed. Struggling to keep up with coursework. Immediate support recommended."
+  },
+  {
+    "student_id": "STU-006",
+    "date": "2025-09-08",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student submitted late work with partial completion. Agreed on an action plan going forward."
+  },
+  {
+    "student_id": "STU-006",
+    "date": "2025-10-08",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-006",
+    "date": "2025-11-07",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student attended today's session but seems distracted. Marks are borderline \u2014 will monitor."
+  },
+  {
+    "student_id": "STU-007",
+    "date": "2025-09-19",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student submitted late work with partial completion. Agreed on an action plan going forward."
+  },
+  {
+    "student_id": "STU-007",
+    "date": "2025-09-29",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Performance is average. Student participates occasionally. Follow-up scheduled for next week."
+  },
+  {
+    "student_id": "STU-007",
+    "date": "2025-10-29",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Discussed upcoming deadlines. Student is managing but flagged some personal difficulties at home."
+  },
+  {
+    "student_id": "STU-008",
+    "date": "2025-09-17",
+    "mentor_name": "Dr. James Chen",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-008",
+    "date": "2025-09-22",
+    "mentor_name": "Dr. James Chen",
+    "note": "Discussed upcoming deadlines. Student is managing but flagged some personal difficulties at home."
+  },
+  {
+    "student_id": "STU-008",
+    "date": "2025-10-20",
+    "mentor_name": "Dr. James Chen",
+    "note": "Performance is average. Student participates occasionally. Follow-up scheduled for next week."
+  },
+  {
+    "student_id": "STU-009",
+    "date": "2025-09-03",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-009",
+    "date": "2025-10-06",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student submitted late work with partial completion. Agreed on an action plan going forward."
+  },
+  {
+    "student_id": "STU-009",
+    "date": "2025-10-10",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Discussed upcoming deadlines. Student is managing but flagged some personal difficulties at home."
+  },
+  {
+    "student_id": "STU-010",
+    "date": "2025-09-24",
+    "mentor_name": "Mr. David Osei",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-010",
+    "date": "2025-10-13",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student submitted late work with partial completion. Agreed on an action plan going forward."
+  },
+  {
+    "student_id": "STU-010",
+    "date": "2025-10-29",
+    "mentor_name": "Mr. David Osei",
+    "note": "Performance is average. Student participates occasionally. Follow-up scheduled for next week."
+  },
+  {
+    "student_id": "STU-011",
+    "date": "2025-09-03",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Discussed upcoming deadlines. Student is managing but flagged some personal difficulties at home."
+  },
+  {
+    "student_id": "STU-011",
+    "date": "2025-09-05",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-011",
+    "date": "2025-11-07",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student submitted late work with partial completion. Agreed on an action plan going forward."
+  },
+  {
+    "student_id": "STU-012",
+    "date": "2025-09-10",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Performance is average. Student participates occasionally. Follow-up scheduled for next week."
+  },
+  {
+    "student_id": "STU-012",
+    "date": "2025-10-13",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student attended today's session but seems distracted. Marks are borderline \u2014 will monitor."
+  },
+  {
+    "student_id": "STU-012",
+    "date": "2025-10-27",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Some improvement noted this week. Still below target on attendance \u2014 encouraged to attend all sessions."
+  },
+  {
+    "student_id": "STU-013",
+    "date": "2025-09-29",
+    "mentor_name": "Dr. James Chen",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-013",
+    "date": "2025-10-31",
+    "mentor_name": "Dr. James Chen",
+    "note": "Positive meeting. Student is well-organised and meeting all deadlines comfortably."
+  },
+  {
+    "student_id": "STU-013",
+    "date": "2025-11-03",
+    "mentor_name": "Dr. James Chen",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-014",
+    "date": "2025-09-08",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-014",
+    "date": "2025-09-17",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-014",
+    "date": "2025-10-01",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Positive meeting. Student is well-organised and meeting all deadlines comfortably."
+  },
+  {
+    "student_id": "STU-015",
+    "date": "2025-09-19",
+    "mentor_name": "Mr. David Osei",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-015",
+    "date": "2025-10-03",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-015",
+    "date": "2025-10-29",
+    "mentor_name": "Mr. David Osei",
+    "note": "Positive meeting. Student is well-organised and meeting all deadlines comfortably."
+  },
+  {
+    "student_id": "STU-016",
+    "date": "2025-09-12",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Positive meeting. Student is well-organised and meeting all deadlines comfortably."
+  },
+  {
+    "student_id": "STU-016",
+    "date": "2025-10-13",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-016",
+    "date": "2025-10-20",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-017",
+    "date": "2025-09-10",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-017",
+    "date": "2025-09-19",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-017",
+    "date": "2025-09-29",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-018",
+    "date": "2025-09-01",
+    "mentor_name": "Dr. James Chen",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-018",
+    "date": "2025-09-22",
+    "mentor_name": "Dr. James Chen",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-018",
+    "date": "2025-10-03",
+    "mentor_name": "Dr. James Chen",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-019",
+    "date": "2025-10-01",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-019",
+    "date": "2025-10-03",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-019",
+    "date": "2025-10-10",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-020",
+    "date": "2025-09-05",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-020",
+    "date": "2025-10-15",
+    "mentor_name": "Mr. David Osei",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-020",
+    "date": "2025-10-29",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-021",
+    "date": "2025-09-05",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-021",
+    "date": "2025-10-24",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-021",
+    "date": "2025-10-27",
+    "mentor_name": "Dr. Anand Rao",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-022",
+    "date": "2025-09-19",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-022",
+    "date": "2025-09-22",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Positive meeting. Student is well-organised and meeting all deadlines comfortably."
+  },
+  {
+    "student_id": "STU-022",
+    "date": "2025-10-06",
+    "mentor_name": "Prof. Sarah Mitchell",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-023",
+    "date": "2025-09-22",
+    "mentor_name": "Dr. James Chen",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-023",
+    "date": "2025-10-06",
+    "mentor_name": "Dr. James Chen",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-023",
+    "date": "2025-10-29",
+    "mentor_name": "Dr. James Chen",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-024",
+    "date": "2025-09-15",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  },
+  {
+    "student_id": "STU-024",
+    "date": "2025-10-03",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-024",
+    "date": "2025-10-15",
+    "mentor_name": "Ms. Priya Kapoor",
+    "note": "Strong submission on Assignment 2. Student is engaged and improving each week."
+  },
+  {
+    "student_id": "STU-025",
+    "date": "2025-09-29",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student is performing well and actively participates in class discussions."
+  },
+  {
+    "student_id": "STU-025",
+    "date": "2025-10-15",
+    "mentor_name": "Mr. David Osei",
+    "note": "Student flagged a minor concern about workload \u2014 offered optional study group. No further action needed."
+  },
+  {
+    "student_id": "STU-025",
+    "date": "2025-10-31",
+    "mentor_name": "Mr. David Osei",
+    "note": "Excellent progress this term. Student is on track and proactive in seeking feedback."
+  }
+]

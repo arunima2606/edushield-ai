@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduShield AI</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #f8f1e5;
+      --surface:   #fffdf9;
+      --surface2:  #f5ead8;
+      --border:    #e7d7c1;
+      --border2:   #cfbfa7;
+      --text:      #2d2926;
+      --text2:     #6f655d;
+      --text3:     #95877c;
+      --high:      #bf4a4a;
+      --high-bg:   #fbe7e2;
+      --med:       #ad741d;
+      --med-bg:    #fff0d6;
+      --low:       #4e8066;
+      --low-bg:    #e2f0e6;
+      --accent:    #7656a7;
+      --mono:      'JetBrains Mono', monospace;
+      --sans:      'Inter', sans-serif;
+    }
+
+    html, body, #root { height: 100%; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans);
+           font-size: 14px; line-height: 1.5; }
+
+    /* Layout */
+    .app    { display: flex; min-height: 100vh; }
+    .sidebar { width: 220px; flex-shrink: 0; background: var(--surface);
+               border-right: 1px solid var(--border); display: flex;
+               flex-direction: column; padding: 0; overflow-y: auto; }
+    .main   { flex: 1; overflow-y: auto; padding: 22px max(32px, calc((100vw - 1180px) / 2)) 48px; }
+    .sidebar { display: none; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 13px 0 22px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .brand-lockup { display:flex; align-items:center; gap:10px; font-weight:750; font-size:16px; letter-spacing:-.3px; }
+    .brand-mark { width:32px; height:32px; border-radius:10px; display:grid; place-items:center; color:white; background:linear-gradient(135deg,#8e70b8,#c79a74); box-shadow:0 5px 14px rgba(118,86,167,.22); }
+    .topnav { display:flex; gap:5px; }
+    .topnav button { border:0; background:transparent; padding:8px 11px; border-radius:8px; font:500 13px var(--sans); color:var(--text2); cursor:pointer; }
+    .topnav button:hover, .topnav button.active { background:#fffaf1; color:var(--text); }
+    .topbar-tools { display:flex; gap:9px; align-items:center; }
+    .notification { width:34px; height:34px; border:1px solid var(--border); border-radius:10px; background:var(--surface); display:grid; place-items:center; cursor:pointer; }
+
+    /* Sidebar */
+    .sidebar-brand { padding: 24px 20px 20px; border-bottom: 1px solid var(--border); }
+    .sidebar-brand h1 { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+    .sidebar-brand p  { font-size: 11px; color: var(--text3); margin-top: 3px; }
+    .sidebar-brand p, .sidebar-footer { display: none; }
+    .sidebar-nav { padding: 12px 10px; flex: 1; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+                border-radius: 7px; cursor: pointer; font-size: 13px; color: var(--text2);
+                transition: all 0.15s; user-select: none; margin-bottom: 2px; }
+    .nav-item:hover   { background: var(--surface2); color: var(--text); }
+    .nav-item.active  { background: var(--surface2); color: var(--text); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 18px; text-align: center; }
+    .sidebar-footer { padding: 16px 20px; border-top: 1px solid var(--border);
+                      font-size: 11px; color: var(--text3); }
+
+    /* Page header */
+    .page-header { margin-bottom: 24px; padding: 26px 28px; border-radius:18px; color:#fffdf9; background:linear-gradient(120deg,#4a3d35,#775a4b 55%,#9b745e); position:relative; overflow:hidden; box-shadow:0 13px 28px rgba(94,66,46,.15); }
+    .page-header::after { content:""; position:absolute; width:170px; height:170px; right:-35px; top:-66px; border-radius:50%; background:rgba(255,239,207,.18); box-shadow:-90px 82px 0 rgba(255,239,207,.08); }
+    .page-header h2 { font-size: 28px; font-weight: 700; letter-spacing: -0.8px; position:relative; z-index:1; }
+    .page-header p  { display:block; position:relative; z-index:1; margin-top:6px; color:rgba(255,253,249,.76); font-size:13px; }
+
+    /* Metric cards */
+    .metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+               gap: 12px; margin-bottom: 28px; }
+    .metric-card { background: var(--surface); border: 1px solid var(--border);
+                   border-radius: 14px; padding: 18px 20px; box-shadow:0 4px 12px rgba(95,72,47,.04); }
+    .metric-card:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(95,72,47,.10); }
+    .metric-label { font-size: 11px; color: var(--text3); text-transform: uppercase;
+                    letter-spacing: 0.06em; margin-bottom: 8px; }
+    .metric-value { font-size: 27px; font-weight: 700; font-family: var(--sans); line-height: 1; }
+    .metric-value.high { color: var(--high); }
+    .metric-value.med  { color: var(--med); }
+    .metric-value.low  { color: var(--low); }
+    .metric-sub { font-size: 11px; color: var(--text3); margin-top: 6px; }
+    .dashboard-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+    .dashboard-header .page-header { margin: 0; }
+    .header-actions { display: flex; gap: 9px; }
+    .header-actions .btn { padding: 9px 13px; }
+    .insight-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 14px; margin: 0 0 28px; }
+    .insight-card { border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; background: var(--surface); box-shadow:0 4px 12px rgba(95,72,47,.04); }
+    .insight-head { display:flex; align-items:center; justify-content:space-between; margin-bottom: 16px; }
+    .insight-head h3 { font-size: 14px; }
+    .distribution { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .distribution-item { padding-right: 12px; border-right: 1px solid var(--border); }
+    .distribution-item:last-child { border-right: none; }
+    .distribution-value { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .mini-track { height: 6px; background: #eeeeef; border-radius: 6px; overflow: hidden; }
+    .mini-fill { height: 100%; border-radius: 6px; }
+    .priority-list { display: grid; gap: 10px; }
+    .priority-item { display:flex; align-items:center; justify-content:space-between; font-size: 13px; }
+    .priority-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--high); margin-right: 8px; display:inline-block; }
+    .workbench-grid { display:grid; grid-template-columns: .85fr 1.15fr; gap:14px; margin:0 0 28px; }
+    .workbench-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:19px 20px; }
+    .workbench-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
+    .workbench-title h3 { font-size:14px; }
+    .trend-chart { height:108px; display:flex; align-items:flex-end; gap:9px; padding:8px 0 0; border-bottom:1px solid var(--border); }
+    .trend-bar { flex:1; min-width:16px; border-radius:7px 7px 2px 2px; background:linear-gradient(180deg,#be9ddd,#7656a7); opacity:.92; position:relative; }
+    .trend-bar:last-child { background:linear-gradient(180deg,#e6ba8b,#ba754f); }
+    .trend-labels { display:flex; justify-content:space-between; color:var(--text3); font-size:10px; padding-top:7px; }
+    .activity-list { display:grid; gap:0; }
+    .activity-item { display:grid; grid-template-columns:29px 1fr auto; gap:10px; align-items:center; padding:10px 0; border-bottom:1px solid var(--border); }
+    .activity-item:last-child { border-bottom:0; }
+    .activity-icon { width:28px; height:28px; border-radius:9px; display:grid; place-items:center; background:#eee4f6; color:#7656a7; font-size:13px; }
+    .activity-copy strong { display:block; font-size:12px; }
+    .activity-copy span, .activity-time { color:var(--text3); font-size:11px; }
+    .toolbar-controls { display: flex; gap: 10px; align-items: center; }
+    .student-search { min-width: 230px; padding: 9px 12px; border: 1px solid var(--border2); border-radius: 9px; font-family: var(--sans); color: var(--text); outline: none; }
+    .student-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(79,70,229,.10); }
+
+    /* Risk badges */
+    .badge { display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px;
+             border-radius: 20px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+    .badge.High   { background: var(--high-bg); color: var(--high); }
+    .badge.Medium { background: var(--med-bg);  color: var(--med); }
+    .badge.Low    { background: var(--low-bg);  color: var(--low); }
+
+    /* Table */
+    .table-wrap { background: transparent; border: none; border-radius: 0; overflow: visible; }
+    .table-toolbar { padding: 0 0 14px; display: flex; align-items: center;
+                     justify-content: space-between; border-bottom: none; }
+    .table-toolbar h3 { font-size: 14px; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { padding: 11px 16px; text-align: left; font-size: 11px; font-weight: 600;
+               color: var(--text3); text-transform: uppercase; letter-spacing: 0.05em;
+               border-bottom: 1px solid var(--border); white-space: nowrap; }
+    tbody tr { border-bottom: 1px solid var(--border); transition: background 0.1s; cursor: pointer; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--surface2); }
+    tbody td { padding: 12px 16px; font-size: 13px; }
+    .student-name { font-weight: 500; }
+    .student-id   { font-family: var(--mono); font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+    /* Progress bar */
+    .progress-wrap { display: flex; align-items: center; gap: 8px; }
+    .progress-bar  { flex: 1; height: 4px; background: var(--border); border-radius: 2px;
+                     min-width: 60px; overflow: hidden; }
+    .progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+    .progress-fill.high { background: var(--high); }
+    .progress-fill.med  { background: var(--med); }
+    .progress-fill.low  { background: var(--low); }
+    .progress-label { font-family: var(--mono); font-size: 12px; color: var(--text2);
+                      width: 32px; text-align: right; }
+
+    /* Filter pills */
+    .filters { display: flex; gap: 10px; }
+    .filter-pill { padding: 9px 19px; border-radius: 9px; border: 1px solid var(--border2);
+                   background: #fff; color: var(--text); font-size: 13px; cursor: pointer;
+                   font-family: var(--sans); transition: all 0.15s; }
+    .filter-pill:hover     { border-color: var(--border2); color: var(--text); }
+    .filter-pill.active    { background: var(--text); color: #fff; border-color: var(--text);
+                             font-weight: 500; }
+
+    /* Student detail */
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; }
+    .card h3 { font-size: 12px; font-weight: 600; text-transform: uppercase;
+               letter-spacing: 0.06em; color: var(--text3); margin-bottom: 14px; }
+    .stat-row { display: flex; justify-content: space-between; align-items: center;
+                padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text2); }
+    .stat-value { font-weight: 500; font-family: var(--mono); }
+
+    /* Report textarea */
+    .report-area { width: 100%; background: var(--bg); border: 1px solid var(--border);
+                   border-radius: 8px; padding: 16px; color: var(--text); font-family: var(--mono);
+                   font-size: 12px; line-height: 1.7; resize: vertical; min-height: 360px;
+                   outline: none; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 18px;
+           border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer;
+           border: none; font-family: var(--sans); transition: all 0.15s; }
+    .btn-primary { background: var(--text); color: var(--bg); }
+    .btn-primary:hover:not(:disabled) { background: #dddddd; }
+    .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-outline:hover:not(:disabled) { border-color: var(--border2); background: var(--surface2); }
+    .btn-outline:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Select */
+    .select { background: var(--surface); border: 1px solid var(--border); color: var(--text);
+              padding: 8px 12px; border-radius: 8px; font-size: 13px; font-family: var(--sans);
+              outline: none; cursor: pointer; }
+    .select:focus { border-color: var(--border2); }
+
+    /* Back btn */
+    .back-btn { display: inline-flex; align-items: center; gap: 6px; color: var(--text2);
+                font-size: 13px; cursor: pointer; margin-bottom: 20px;
+                background: none; border: none; font-family: var(--sans); }
+    .back-btn:hover { color: var(--text); }
+
+    /* Loading spinner */
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--border);
+               border-top-color: var(--text); border-radius: 50%; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Notes expander */
+    .expander { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .expander-header { display: flex; justify-content: space-between; align-items: center;
+                       padding: 12px 16px; cursor: pointer; background: var(--surface);
+                       font-size: 13px; font-weight: 500; user-select: none; }
+    .expander-header:hover { background: var(--surface2); }
+    .expander-body { padding: 14px 16px; font-size: 12px; color: var(--text2);
+                     line-height: 1.7; background: var(--bg); }
+    .note-item { padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .note-item:last-child { border-bottom: none; }
+
+    /* Export page */
+    .export-table { background: var(--surface); border: 1px solid var(--border);
+                    border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+    .report-block { border: 1px solid var(--border); border-radius: 8px;
+                    overflow: hidden; margin-bottom: 12px; }
+    .report-block-header { padding: 12px 16px; background: var(--surface);
+                           display: flex; justify-content: space-between; align-items: center;
+                           cursor: pointer; font-size: 13px; font-weight: 500; }
+    .report-block-header:hover { background: var(--surface2); }
+    .report-block-body { padding: 0 16px 16px; background: var(--bg); }
+
+    /* Toast */
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface);
+             border: 1px solid var(--border); border-radius: 8px; padding: 12px 18px;
+             font-size: 13px; box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 100;
+             animation: slideUp 0.2s ease; }
+    @keyframes slideUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform:none; } }
+
+    /* Profile pill */
+    .profile-pill { display: flex; align-items: center; gap: 14px; padding: 0;
+                    background: transparent; border-radius: 8px; margin-bottom: 16px; }
+    .avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--border2);
+              display: flex; align-items: center; justify-content: center; font-size: 13px;
+              font-weight: 600; flex-shrink: 0; }
+    .avatar.High   { background: var(--high-bg);  color: var(--high); }
+    .avatar.Medium { background: var(--med-bg);   color: var(--med);  }
+    .avatar.Low    { background: var(--low-bg);   color: var(--low);  }
+
+    .section-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    .student-list { display: grid; gap: 10px; }
+    .table-wrap table { display: none; }
+    .student-row { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 20px;
+                    padding: 17px 20px; background: var(--surface); border: 1px solid var(--border);
+                    border-radius: 14px; cursor: pointer; transition: transform .15s, border-color .15s, box-shadow .15s; }
+    .student-row:hover { transform:translateY(-2px); border-color: var(--accent); box-shadow: 0 10px 22px rgba(118,86,167,.12); }
+    .student-row:first-child { border-color: var(--accent); }
+    .student-row-main { display: flex; gap: 14px; align-items: center; }
+    .student-row-name { font-weight: 650; font-size: 16px; }
+    .student-row-sub { color: var(--text2); margin-top: 3px; font-size: 13px; }
+    .risk-bars { display: flex; align-items: end; gap: 3px; height: 18px; }
+    .risk-bars span { display: block; width: 6px; height: 18px; border-radius: 2px; background: #d0d1d4; }
+    .risk-bars span:last-child { background: var(--high); }
+    .risk-bars.Medium span:last-child { background: var(--med); }
+    .risk-bars.Low span:last-child { background: var(--low); }
+    .detail-panel { border: 1px solid var(--border); border-radius: 14px; padding: 26px; background: #fff; }
+    .detail-grid, .detail-grid + .section-divider, .detail-grid + .section-divider + .card { display: none; }
+    .detail-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 22px 0; }
+    .summary-box { background: var(--surface2); border-radius: 10px; padding: 14px 16px; }
+    .summary-label { font-size: 12px; color: var(--text2); font-weight: 600; }
+    .summary-value { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .note-box { background: var(--surface2); border-left: 2px solid #9b94ef; border-radius: 9px; padding: 14px 16px; line-height: 1.55; }
+    .interventions { margin-top: 18px; }
+    .intervention { display: flex; align-items: flex-start; gap: 11px; margin: 12px 0; font-weight: 500; }
+    .intervention-num { width: 24px; height: 24px; flex: 0 0 24px; border-radius: 50%; display: grid; place-items: center;
+                        background: #edeaff; color: #49409f; font-size: 12px; font-weight: 700; }
+    .intervention-tag { margin-left: 7px; padding: 2px 7px; border: 1px solid var(--border2); border-radius: 12px; color: var(--text2); font-size: 11px; font-weight: 500; white-space: nowrap; }
+    @media (max-width: 760px) { .main { padding: 14px 18px 35px; } .metrics { grid-template-columns: 1fr 1fr; } .student-row { grid-template-columns: 1fr auto; } .student-row .risk-bars { display: none; } .detail-summary, .insight-grid, .workbench-grid { grid-template-columns: 1fr; } .sidebar { display:none; } .dashboard-header, .table-toolbar { align-items: stretch; flex-direction: column; } .toolbar-controls { flex-wrap: wrap; } .student-search { min-width: 0; flex: 1; } .topnav { display:none; } .page-header { padding:22px; } }
+    .empty-state { text-align: center; padding: 48px; color: var(--text3); font-size: 13px; }
+  </style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect, useCallback } = React;
+
+const API = "http://localhost:8000";
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+const fmt_att = (r) => `${(r * 100).toFixed(1)}%`;
+const fmt_avg = (v) => `${v.toFixed(1)}%`;
+const initials = (name) => name.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+
+function RiskBadge({ tier }) {
+  const dots = { High: "●", Medium: "●", Low: "●" };
+  return <span className={`badge ${tier}`}>{dots[tier]} {tier}</span>;
+}
+
+function ProgressBar({ value, max = 100, tier }) {
+  const pct = Math.min((value / max) * 100, 100);
+  return (
+    <div className="progress-wrap">
+      <div className="progress-bar">
+        <div className={`progress-fill ${tier.toLowerCase()}`} style={{ width: `${pct}%` }} />
+      </div>
+      <span className="progress-label">{value}</span>
+    </div>
+  );
+}
+
+function Spinner() { return <span className="spinner" />; }
+
+function Toast({ msg, onClose }) {
+  useEffect(() => { const t = setTimeout(onClose, 2800); return () => clearTimeout(t); }, []);
+  return <div className="toast">✓ {msg}</div>;
+}
+
+// ── API hooks ────────────────────────────────────────────────────────────────
+function useMetrics() {
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    fetch(`${API}/api/metrics`).then(r => r.json()).then(setData).catch(console.error);
+  }, []);
+  return data;
+}
+
+function useCohort(tier) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(true);
+    const url = tier && tier !== "All" ? `${API}/api/cohort?tier=${tier}` : `${API}/api/cohort`;
+    fetch(url).then(r => r.json()).then(d => { setData(d.students); setLoading(false); }).catch(console.error);
+  }, [tier]);
+  return { data, loading };
+}
+
+// ── COHORT PAGE ───────────────────────────────────────────────────────────────
+function CohortPage({ onSelect }) {
+  const metrics = useMetrics();
+  const [tier, setTier] = useState("All");
+  const [search, setSearch] = useState("");
+  const { data: students, loading } = useCohort(tier);
+  const visibleStudents = (students || []).filter(s =>
+    `${s.name} ${s.student_id} ${s.programme}`.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <div>
+      <div className="page-header">
+        <h2>Student risk dashboard</h2>
+        <p>Live cohort overview · updated today</p>
+      </div>
+
+      {/* Metrics */}
+      <div className="metrics">
+        <div className="metric-card">
+          <div className="metric-label">Total Students</div>
+          <div className="metric-value">{metrics?.total ?? "—"}</div>
+          <div className="metric-sub">Year 3 cohort</div>
+        </div>
+        <div className="metric-card">
+          <div className="metric-label">High Risk</div>
+          <div className="metric-value high">{metrics?.high_risk ?? "—"}</div>
+          <div className="metric-sub">Needs action</div>
+        </div>
+        <div className="metric-card">
+          <div className="metric-label">Medium Risk</div>
+          <div className="metric-value med">{metrics?.medium_risk ?? "—"}</div>
+          <div className="metric-sub">Monitor closely</div>
+        </div>
+        <div className="metric-card">
+          <div className="metric-label">Low Risk</div>
+          <div className="metric-value low">{metrics?.low_risk ?? "—"}</div>
+          <div className="metric-sub">On track</div>
+        </div>
+        <div className="metric-card">
+          <div className="metric-label">Avg. Attendance</div>
+          <div className="metric-value" style={{ fontSize: 22 }}>{metrics ? `${metrics.avg_attendance}%` : "—"}</div>
+          <div className="metric-sub">Target: 75%</div>
+        </div>
+        <div className="metric-card">
+          <div className="metric-label">Avg. Assessment</div>
+          <div className="metric-value" style={{ fontSize: 22 }}>{metrics ? `${metrics.avg_assessment}%` : "—"}</div>
+          <div className="metric-sub">Pass mark: 50%</div>
+        </div>
+      </div>
+
+      <div className="insight-grid">
+        <section className="insight-card">
+          <div className="insight-head"><h3>Risk distribution</h3><span style={{color: 'var(--text3)', fontSize: 12}}>Current cohort</span></div>
+          <div className="distribution">
+            {[['High', metrics?.high_risk, 'var(--high)'], ['Medium', metrics?.medium_risk, 'var(--med)'], ['Low', metrics?.low_risk, 'var(--low)']].map(([label, value, color]) => (
+              <div className="distribution-item" key={label}>
+                <div style={{color: 'var(--text2)', fontSize: 12, marginBottom: 3}}>{label} risk</div>
+                <div className="distribution-value">{value ?? '—'}</div>
+                <div className="mini-track"><div className="mini-fill" style={{background: color, width: metrics?.total ? `${(value / metrics.total) * 100}%` : '0%'}} /></div>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="insight-card">
+          <div className="insight-head"><h3>Priority actions</h3><span style={{fontSize: 12, color: 'var(--accent)'}}>Today</span></div>
+          <div className="priority-list">
+            <div className="priority-item"><span><i className="priority-dot" />Welfare checks due</span><strong>{metrics?.high_risk ?? '—'}</strong></div>
+            <div className="priority-item"><span><i className="priority-dot" style={{background: 'var(--med)'}} />Attendance follow-ups</span><strong>{metrics?.medium_risk ?? '—'}</strong></div>
+            <div className="priority-item"><span><i className="priority-dot" style={{background: 'var(--accent)'}} />Reports ready to draft</span><strong>{metrics?.high_risk ?? '—'}</strong></div>
+          </div>
+        </section>
+      </div>
+
+      <div className="workbench-grid">
+        <section className="workbench-card">
+          <div className="workbench-title"><h3>Attendance risk trend</h3><span style={{fontSize: 12, color: 'var(--high)'}}>↑ 8% this week</span></div>
+          <div className="trend-chart">
+            {[44, 51, 48, 61, 58, 70, 76].map((height, index) => <div className="trend-bar" key={index} style={{height: `${height}%`}} />)}
+          </div>
+          <div className="trend-labels"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Today</span></div>
+        </section>
+        <section className="workbench-card">
+          <div className="workbench-title"><h3>Recent activity</h3><span style={{fontSize: 12, color: 'var(--accent)'}}>View updates</span></div>
+          <div className="activity-list">
+            <div className="activity-item"><span className="activity-icon">✦</span><div className="activity-copy"><strong>Intervention plan drafted</strong><span>Ready for mentor review</span></div><span className="activity-time">12m</span></div>
+            <div className="activity-item"><span className="activity-icon" style={{background:'#fff0d6',color:'var(--med)'}}>!</span><div className="activity-copy"><strong>Attendance alert received</strong><span>Student missed a second check-in</span></div><span className="activity-time">1h</span></div>
+            <div className="activity-item"><span className="activity-icon" style={{background:'#e2f0e6',color:'var(--low)'}}>✓</span><div className="activity-copy"><strong>Mentor follow-up completed</strong><span>Student wellbeing note recorded</span></div><span className="activity-time">3h</span></div>
+          </div>
+        </section>
+      </div>
+
+      {/* Table */}
+      <div className="table-wrap">
+        <div className="table-toolbar">
+          <h3 style={{ textTransform: "uppercase", fontSize: 12, color: "var(--text2)", letterSpacing: ".04em" }}>Students requiring intervention</h3>
+          <div className="toolbar-controls">
+            <input className="student-search" value={search} onChange={e => setSearch(e.target.value)} placeholder="Search student or ID" aria-label="Search students" />
+          <div className="filters">
+            {["All","High","Medium","Low"].map(t => (
+              <button key={t} className={`filter-pill ${tier === t ? "active" : ""}`} onClick={() => setTier(t)}>{t}</button>
+            ))}
+          </div>
+          </div>
+        </div>
+        {loading ? (
+          <div className="empty-state"><Spinner /></div>
+        ) : (
+          <>
+          <div className="student-list">
+            {visibleStudents.map(s => (
+              <div className="student-row" key={s.student_id} onClick={() => onSelect(s.student_id)}>
+                <div className="student-row-main">
+                  <div className={`avatar ${s.risk_tier}`}>{initials(s.name)}</div>
+                  <div><div className="student-row-name">{s.name}</div><div className="student-row-sub">{s.student_id} · Attendance {fmt_att(s.attendance_rate)} · Assessment {fmt_avg(s.assessment_avg)}</div></div>
+                </div>
+                <div className={`risk-bars ${s.risk_tier}`}><span></span><span></span><span></span><span></span></div>
+                <RiskBadge tier={s.risk_tier} />
+              </div>
+            ))}
+          </div>
+          <div style={{display: "none"}}>
+          <table>
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Programme</th>
+                <th>Yr</th>
+                <th>Attendance</th>
+                <th>Avg. Marks</th>
+                <th>Failed</th>
+                <th>Risk Score</th>
+                <th>Risk Tier</th>
+              </tr>
+            </thead>
+            <tbody>
+              {students?.map(s => (
+                <tr key={s.student_id} onClick={() => onSelect(s.student_id)}>
+                  <td>
+                    <div className="student-name">{s.name}</div>
+                    <div className="student-id">{s.student_id}</div>
+                  </td>
+                  <td style={{ color: "var(--text2)", fontSize: 12 }}>{s.programme}</td>
+                  <td style={{ color: "var(--text2)" }}>{s.year}</td>
+                  <td>
+                    <span style={{ fontFamily: "var(--mono)", fontSize: 12,
+                      color: s.attendance_rate < 0.75 ? "var(--high)" : "var(--low)" }}>
+                      {fmt_att(s.attendance_rate)}
+                    </span>
+                  </td>
+                  <td>
+                    <span style={{ fontFamily: "var(--mono)", fontSize: 12,
+                      color: s.assessment_avg < 50 ? "var(--high)" : s.assessment_avg < 65 ? "var(--med)" : "var(--low)" }}>
+                      {fmt_avg(s.assessment_avg)}
+                    </span>
+                  </td>
+                  <td style={{ fontFamily: "var(--mono)", fontSize: 12, color: s.failed_modules > 0 ? "var(--high)" : "var(--text2)" }}>
+                    {s.failed_modules}/4
+                  </td>
+                  <td style={{ minWidth: 120 }}>
+                    <ProgressBar value={s.risk_score} tier={s.risk_tier} />
+                  </td>
+                  <td><RiskBadge tier={s.risk_tier} /></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── STUDENT DETAIL PAGE ───────────────────────────────────────────────────────
+function StudentDetailPage({ studentId, onBack }) {
+  const [student, setStudent] = useState(null);
+  const [loading, setLoading]  = useState(true);
+  const [report, setReport]    = useState("");
+  const [genLoading, setGenLoading] = useState(false);
+  const [notesOpen, setNotesOpen]   = useState(false);
+  const [toast, setToast]           = useState(null);
+
+  useEffect(() => {
+    if (!studentId) return;
+    setLoading(true); setReport("");
+    fetch(`${API}/api/student/${studentId}`)
+      .then(r => r.json()).then(d => { setStudent(d); setLoading(false); });
+  }, [studentId]);
+
+  const generateReport = async () => {
+    setGenLoading(true); setReport("");
+    const res = await fetch(`${API}/api/report`, {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ student_id: studentId })
+    });
+    const data = await res.json();
+    setReport(data.report || data.detail || "Error generating report.");
+    setGenLoading(false);
+  };
+
+  const downloadReport = () => {
+    window.open(`${API}/api/report/download/${studentId}`, "_blank");
+    setToast("Report download started");
+  };
+
+  if (loading) return <div className="empty-state"><Spinner /></div>;
+  if (!student)  return <div className="empty-state">Student not found.</div>;
+
+  const notes = student.all_notes?.split(" | ") || [];
+
+  return (
+    <div>
+      {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
+
+      <button className="back-btn" onClick={onBack}>← Back to Cohort</button>
+
+      <div className="page-header">
+        <div className="profile-pill">
+          <div className={`avatar ${student.risk_tier}`}>{initials(student.name)}</div>
+          <div>
+            <div style={{ fontWeight: 600 }}>{student.name}</div>
+            <div style={{ fontSize: 12, color: "var(--text2)" }}>
+              {student.student_id} · {student.programme} · Year {student.year} · Mentor: {student.mentor_name}
+            </div>
+          </div>
+          <div style={{ marginLeft: "auto" }}><RiskBadge tier={student.risk_tier} /></div>
+        </div>
+      </div>
+
+      <div className="detail-panel">
+        <div className="detail-summary">
+          <div className="summary-box"><div className="summary-label">Attendance</div><div className="summary-value" style={{color: student.attendance_rate < .75 ? "var(--high)" : "var(--low)"}}>{fmt_att(student.attendance_rate)}</div></div>
+          <div className="summary-box"><div className="summary-label">Assessment</div><div className="summary-value" style={{color: student.assessment_avg < 50 ? "var(--high)" : "var(--low)"}}>{fmt_avg(student.assessment_avg)}</div></div>
+          <div className="summary-box"><div className="summary-label">Risk trend</div><div className="summary-value">{student.risk_tier === "High" ? "↓ Declining" : "→ Monitor"}</div></div>
+        </div>
+        <div style={{fontSize: 13, fontWeight: 650, marginBottom: 8}}>Mentoring note</div>
+        <div className="note-box">{notes[0] || "No mentor note has been recorded for this student."}</div>
+        <hr className="section-divider" />
+        <div style={{fontSize: 13, fontWeight: 650, textTransform: "uppercase", color: "var(--text2)", letterSpacing: ".04em"}}>Suggested interventions</div>
+        <div className="interventions">
+          {["Schedule an urgent welfare check with the pastoral care lead", "Provide catch-up materials for missed learning", "Set up a weekly attendance check-in with the assigned mentor", "Refer to student support for wellbeing or financial barriers"].map((item, index) => (
+            <div className="intervention" key={item}><div className="intervention-num">{index + 1}</div><div>{item}<span className="intervention-tag">{index === 0 ? "Immediate" : index === 1 ? "Academic" : index === 2 ? "Attendance" : "Wellbeing"}</span></div></div>
+          ))}
+        </div>
+        <button className="btn btn-outline" style={{marginTop: 18}} onClick={generateReport} disabled={genLoading}>{genLoading ? <><Spinner /> Drafting intervention plan…</> : `✦ Draft intervention letter for ${student.name}`}</button>
+        {report && <textarea className="report-area" value={report} readOnly style={{minHeight: 260, marginTop: 18}} />}
+      </div>
+
+      <div className="detail-grid">
+        {/* Attendance card */}
+        <div className="card">
+          <h3>Attendance</h3>
+          <div className="stat-row">
+            <span className="stat-label">Attendance Rate</span>
+            <span className="stat-value" style={{ color: student.attendance_rate < 0.75 ? "var(--high)" : "var(--low)" }}>
+              {fmt_att(student.attendance_rate)}
+            </span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Total Absences</span>
+            <span className="stat-value">{student.total_absences} sessions</span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Max Consecutive Absent</span>
+            <span className="stat-value">{student.consecutive_absences} sessions</span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Threshold</span>
+            <span className="stat-value" style={{ color: "var(--text3)" }}>75% minimum</span>
+          </div>
+        </div>
+
+        {/* Assessment card */}
+        <div className="card">
+          <h3>Assessment</h3>
+          <div className="stat-row">
+            <span className="stat-label">Average Mark</span>
+            <span className="stat-value" style={{ color: student.assessment_avg < 50 ? "var(--high)" : student.assessment_avg < 65 ? "var(--med)" : "var(--low)" }}>
+              {fmt_avg(student.assessment_avg)}
+            </span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Failed Modules</span>
+            <span className="stat-value" style={{ color: student.failed_modules > 0 ? "var(--high)" : "var(--low)" }}>
+              {student.failed_modules} / 4
+            </span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Pass Mark</span>
+            <span className="stat-value" style={{ color: "var(--text3)" }}>50% per module</span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Negative Mentor Signals</span>
+            <span className="stat-value" style={{ color: student.has_negative_notes ? "var(--high)" : "var(--low)" }}>
+              {student.has_negative_notes ? "Yes" : "No"}
+            </span>
+          </div>
+        </div>
+
+        {/* Risk score card */}
+        <div className="card">
+          <h3>Risk Score</h3>
+          <div style={{ marginBottom: 14 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8 }}>
+              <span style={{ color: "var(--text2)", fontSize: 13 }}>Composite Score</span>
+              <span style={{ fontFamily: "var(--mono)", fontWeight: 600, fontSize: 15 }}>{student.risk_score}/100</span>
+            </div>
+            <div className="progress-bar" style={{ height: 8 }}>
+              <div className={`progress-fill ${student.risk_tier.toLowerCase()}`} style={{ width: `${student.risk_score}%` }} />
+            </div>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Classification</span>
+            <RiskBadge tier={student.risk_tier} />
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Scoring: Attendance</span>
+            <span className="stat-value" style={{ color: "var(--text3)", fontSize: 12 }}>Max 40 pts</span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Scoring: Assessment</span>
+            <span className="stat-value" style={{ color: "var(--text3)", fontSize: 12 }}>Max 40 pts</span>
+          </div>
+          <div className="stat-row">
+            <span className="stat-label">Scoring: Mentor Sentiment</span>
+            <span className="stat-value" style={{ color: "var(--text3)", fontSize: 12 }}>Max 20 pts</span>
+          </div>
+        </div>
+
+        {/* Mentor notes */}
+        <div className="card">
+          <h3>Mentor Notes</h3>
+          <div className="expander">
+            <div className="expander-header" onClick={() => setNotesOpen(!notesOpen)}>
+              <span>{notes.length} notes recorded</span>
+              <span>{notesOpen ? "▲" : "▼"}</span>
+            </div>
+            {notesOpen && (
+              <div className="expander-body">
+                {notes.map((n, i) => (
+                  <div key={i} className="note-item">{n}</div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* AI Report */}
+      <hr className="section-divider" />
+      <div className="card" style={{ marginTop: 0 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
+          <h3 style={{ margin: 0 }}>AI Intervention Report</h3>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button className="btn btn-primary" onClick={generateReport} disabled={genLoading}>
+              {genLoading ? <><Spinner /> Generating…</> : "⚡ Generate Report"}
+            </button>
+            {report && (
+              <button className="btn btn-outline" onClick={downloadReport}>⬇ Download</button>
+            )}
+          </div>
+        </div>
+        {report ? (
+          <textarea
+            className="report-area"
+            value={report}
+            readOnly
+          />
+        ) : (
+          <div className="empty-state" style={{ padding: 32 }}>
+            {genLoading
+              ? <><Spinner /><div style={{ marginTop: 10 }}>Generating report via NVIDIA NIM…</div></>
+              : "Click Generate Report to produce an AI-powered intervention plan for this student."
+            }
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ── EXPORT PAGE ───────────────────────────────────────────────────────────────
+function ExportPage() {
+  const { data: students, loading } = useCohort("High");
+  const [reports, setReports]   = useState({});
+  const [generating, setGenerating] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [openIds, setOpenIds]   = useState({});
+  const [toast, setToast]       = useState(null);
+
+  const generateAll = async () => {
+    if (!students?.length) return;
+    setGenerating(true); setReports({}); setProgress(0);
+    const total = students.length;
+    for (let i = 0; i < total; i++) {
+      const s = students[i];
+      const res = await fetch(`${API}/api/report`, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ student_id: s.student_id })
+      });
+      const data = await res.json();
+      setReports(prev => ({ ...prev, [s.student_id]: { name: s.name, report: data.report } }));
+      setProgress(Math.round(((i + 1) / total) * 100));
+    }
+    setGenerating(false);
+  };
+
+  const downloadZip = () => {
+    window.open(`${API}/api/report/batch-zip`, "_blank");
+    setToast("ZIP download started");
+  };
+
+  const toggleOpen = (id) => setOpenIds(prev => ({ ...prev, [id]: !prev[id] }));
+
+  const hasReports = Object.keys(reports).length > 0;
+
+  return (
+    <div>
+      {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
+
+      <div className="page-header">
+        <h2>Batch Export</h2>
+        <p>Generate and download intervention reports for all High Risk students</p>
+      </div>
+
+      {loading ? <div className="empty-state"><Spinner /></div> : (
+        <>
+          {/* High-risk summary table */}
+          <div className="export-table">
+            <div className="table-toolbar">
+              <h3>High Risk Students ({students?.length ?? 0})</h3>
+              <div style={{ display: "flex", gap: 8 }}>
+                {hasReports && (
+                  <button className="btn btn-outline" onClick={downloadZip}>⬇ Download All (.zip)</button>
+                )}
+                <button className="btn btn-primary" onClick={generateAll} disabled={generating}>
+                  {generating
+                    ? <><Spinner /> Generating… {progress}%</>
+                    : "⚡ Generate All Reports"
+                  }
+                </button>
+              </div>
+            </div>
+
+            {generating && (
+              <div style={{ padding: "0 20px 16px" }}>
+                <div className="progress-bar" style={{ height: 6 }}>
+                  <div className="progress-fill high" style={{ width: `${progress}%`, transition: "width 0.4s" }} />
+                </div>
+                <div style={{ fontSize: 12, color: "var(--text3)", marginTop: 6 }}>{progress}% complete</div>
+              </div>
+            )}
+
+            <table>
+              <thead>
+                <tr>
+                  <th>Student</th>
+                  <th>Programme</th>
+                  <th>Attendance</th>
+                  <th>Avg. Marks</th>
+                  <th>Risk Score</th>
+                  <th>Report</th>
+                </tr>
+              </thead>
+              <tbody>
+                {students?.map(s => (
+                  <tr key={s.student_id}>
+                    <td>
+                      <div className="student-name">{s.name}</div>
+                      <div className="student-id">{s.student_id}</div>
+                    </td>
+                    <td style={{ color: "var(--text2)", fontSize: 12 }}>{s.programme}</td>
+                    <td style={{ fontFamily: "var(--mono)", fontSize: 12, color: "var(--high)" }}>{fmt_att(s.attendance_rate)}</td>
+                    <td style={{ fontFamily: "var(--mono)", fontSize: 12, color: "var(--high)" }}>{fmt_avg(s.assessment_avg)}</td>
+                    <td><ProgressBar value={s.risk_score} tier="High" /></td>
+                    <td>
+                      {reports[s.student_id]
+                        ? <span style={{ color: "var(--low)", fontSize: 12 }}>✓ Ready</span>
+                        : <span style={{ color: "var(--text3)", fontSize: 12 }}>Pending</span>
+                      }
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Generated reports */}
+          {hasReports && (
+            <>
+              <h3 style={{ marginBottom: 14, fontSize: 14, fontWeight: 600 }}>Generated Reports</h3>
+              {Object.entries(reports).map(([sid, { name, report }]) => (
+                <div key={sid} className="report-block">
+                  <div className="report-block-header" onClick={() => toggleOpen(sid)}>
+                    <span>{name} <span style={{ color: "var(--text3)", fontFamily: "var(--mono)", fontSize: 12 }}>({sid})</span></span>
+                    <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+                      <a href={`${API}/api/report/download/${sid}`} target="_blank"
+                         onClick={e => e.stopPropagation()}
+                         style={{ fontSize: 12, color: "var(--text2)", textDecoration: "none" }}>
+                        ⬇ Download
+                      </a>
+                      <span>{openIds[sid] ? "▲" : "▼"}</span>
+                    </div>
+                  </div>
+                  {openIds[sid] && (
+                    <div className="report-block-body">
+                      <textarea className="report-area" value={report} readOnly style={{ minHeight: 280, marginTop: 12 }} />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+// ── APP SHELL ─────────────────────────────────────────────────────────────────
+function App() {
+  const [page, setPage]         = useState("cohort");
+  const [selectedId, setSelectedId] = useState(null);
+
+  const navTo = (p) => { setPage(p); setSelectedId(null); };
+
+  const handleSelect = (id) => { setSelectedId(id); setPage("detail"); };
+  const handleBack   = ()   => { setPage("cohort"); setSelectedId(null); };
+
+  const navItems = [
+    { id: "cohort", icon: "◈", label: "Cohort Overview" },
+    { id: "detail", icon: "◉", label: "Student Detail" },
+    { id: "export", icon: "↗", label: "Export Reports" },
+  ];
+
+  return (
+    <div className="app">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <div className="sidebar-brand">
+          <h1>EduShield AI</h1>
+          <p>Early intervention workspace</p>
+        </div>
+        <nav className="sidebar-nav">
+          {navItems.map(n => (
+            <div key={n.id}
+              className={`nav-item ${page === n.id ? "active" : ""}`}
+              onClick={() => n.id === "detail" && selectedId ? setPage("detail") : navTo(n.id)}>
+              <span className="nav-icon">{n.icon}</span>
+              {n.label}
+            </div>
+          ))}
+        </nav>
+        <div className="sidebar-footer">
+          Academic Year 2025–2026<br />
+          FastAPI + React
+        </div>
+      </aside>
+
+      {/* Main content */}
+      <main className="main">
+        <header className="topbar">
+          <div className="brand-lockup"><span className="brand-mark">✦</span> EduShield</div>
+          <nav className="topnav">
+            {navItems.map(n => <button key={n.id} className={page === n.id ? "active" : ""} onClick={() => n.id === "detail" && selectedId ? setPage("detail") : navTo(n.id)}>{n.label}</button>)}
+          </nav>
+          <div className="topbar-tools"><button className="notification" title="Notifications">◌</button><div className="avatar Low" style={{width:34, height:34, fontSize:11}}>AM</div></div>
+        </header>
+        {page === "cohort" && <CohortPage onSelect={handleSelect} />}
+        {page === "detail" && selectedId && <StudentDetailPage studentId={selectedId} onBack={handleBack} />}
+        {page === "detail" && !selectedId && (
+          <div>
+            <div className="page-header"><h2>Student Detail</h2><p>Select a student from the cohort overview to view their risk profile.</p></div>
+            <div className="empty-state">Click any student row in Cohort Overview to load their profile here.</div>
+          </div>
+        )}
+        {page === "export" && <ExportPage />}
+      </main>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

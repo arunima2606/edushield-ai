@@ -1,0 +1,11 @@
+# Backend
+fastapi
+uvicorn[standard]
+python-multipart
+openai
+pandas
+scikit-learn
+python-dotenv
+faker
+
+# Frontend — served as static HTML, no npm required

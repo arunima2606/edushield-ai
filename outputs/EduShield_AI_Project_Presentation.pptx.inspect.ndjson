@@ -1,0 +1,206 @@
+{"kind":"deck","id":"pr/w534tb","name":"Deck"}
+{"kind":"layout","layoutId":"65160f03-491e-46e6-bcc7-63aa93bd5a9a","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"727f86ca-3155-455f-baa4-50a2aeaf89b7","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/6piiiu","slide":1,"title":"EARLY INTERVENTION PLATFORM","textShapes":11}
+{"kind":"shape","id":"sh/876xkfep","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/76xwrux4","slide":1,"bbox":[760,0,520,720]}
+{"kind":"shape","id":"sh/m5ofipwj","slide":1,"bbox":[806,126,342,352]}
+{"kind":"textbox","id":"sh/hczyx4f6","slide":1,"text":"EARLY INTERVENTION PLATFORM","textPreview":"EARLY INTERVENTION PLATFORM","textChars":27,"textLines":1,"bbox":[64,84,430,22]}
+{"kind":"textbox","id":"sh/wbqxozel","slide":1,"text":"EduShield AI","textPreview":"EduShield AI","textChars":12,"textLines":1,"bbox":[64,146,630,74]}
+{"kind":"textbox","id":"sh/vaxgvux0","slide":1,"text":"Student risk detection and timely intervention","textPreview":"Student risk detection and timely intervention","textChars":46,"textLines":1,"bbox":[64,234,560,60]}
+{"kind":"textbox","id":"sh/u9ofmpwv","slide":1,"text":"A data-informed dashboard that helps mentors identify students who need support before disengagement becomes entrenched.","textPreview":"A data-informed dashboard that helps mentors identify students who need support before disengagement becomes entrenched.","textChars":120,"textLines":1,"bbox":[64,326,565,76]}
+{"kind":"shape","id":"sh/5gzy14fi","slide":1,"bbox":[64,470,250,44]}
+{"kind":"textbox","id":"sh/4fqxszex","slide":1,"text":"NVIDIA NIM–powered reports","textPreview":"NVIDIA NIM–powered reports","textChars":26,"textLines":1,"bbox":[84,478,210,26]}
+{"kind":"textbox","id":"sh/ylcfyh4b","slide":1,"text":"Project presentation","textPreview":"Project presentation","textChars":20,"textLines":1,"bbox":[64,620,440,26]}
+{"kind":"textbox","id":"sh/zm5w7m5g","slide":1,"text":"Student risk signal","textPreview":"Student risk signal","textChars":19,"textLines":1,"bbox":[836,156,270,24]}
+{"kind":"textbox","id":"sh/0nex07m1","slide":1,"text":"74","textPreview":"74","textChars":2,"textLines":1,"bbox":[836,198,145,90]}
+{"kind":"textbox","id":"sh/lone9cnm","slide":1,"text":"/100","textPreview":"/100","textChars":4,"textLines":1,"bbox":[976,244,90,35]}
+{"kind":"textbox","id":"sh/m9wf2h47","slide":1,"text":"Action recommended","textPreview":"Action recommended","textChars":18,"textLines":1,"bbox":[836,300,240,28]}
+{"kind":"shape","id":"sh/na5wbm5s","slide":1,"bbox":[836,365,260,12]}
+{"kind":"shape","id":"sh/8bex4rmd","slide":1,"bbox":[836,365,187,12]}
+{"kind":"textbox","id":"sh/9cnedwny","slide":1,"text":"Attendance + assessment + mentor insight","textPreview":"Attendance + assessment + mentor insight","textChars":40,"textLines":1,"bbox":[836,402,270,48]}
+{"kind":"notes","id":"nt/6piiiu","slide":1,"text":""}
+{"kind":"slide","id":"sl/hrm59k","slide":2,"title":"PROBLEM STATEMENT","textShapes":17}
+{"kind":"shape","id":"sh/2p4fut4v","slide":2,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/psvyponm","slide":2,"text":"PROBLEM STATEMENT","textPreview":"PROBLEM STATEMENT","textChars":17,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/ormxwjm1","slide":2,"text":"Student risk is visible too late","textPreview":"Student risk is visible too late","textChars":32,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/fmtgje5k","slide":2,"text":"Attendance, assessment and wellbeing information often sit in separate places.","textPreview":"Attendance, assessment and wellbeing information often sit in separate places.","textChars":78,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/elkfq94z","slide":2,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/1ovylona","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"shape","id":"sh/gn2xsjm5","slide":2,"bbox":[78,218,29,29]}
+{"kind":"textbox","id":"sh/zixgvilo","slide":2,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[78,218,29,29]}
+{"kind":"textbox","id":"sh/yhof2d43","slide":2,"text":"Delayed identification","textPreview":"Delayed identification","textChars":22,"textLines":1,"bbox":[126,212,430,28]}
+{"kind":"textbox","id":"sh/kfa1c7ut","slide":2,"text":"Staff can miss early warning signs until absences, failed modules or disengagement have already accumulated.","textPreview":"Staff can miss early warning signs until absences, failed modules or disengagement have already accumulated.","textChars":108,"textLines":1,"bbox":[126,241,455,46]}
+{"kind":"shape","id":"sh/5gjilcby","slide":2,"bbox":[78,336,29,29]}
+{"kind":"textbox","id":"sh/idsjaxcn","slide":2,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[78,336,29,29]}
+{"kind":"textbox","id":"sh/je10j2t8","slide":2,"text":"Fragmented evidence","textPreview":"Fragmented evidence","textChars":19,"textLines":1,"bbox":[126,330,430,28]}
+{"kind":"textbox","id":"sh/wbah8nuh","slide":2,"text":"Mentor observations and academic records are difficult to view together during a timely student-support conversation.","textPreview":"Mentor observations and academic records are difficult to view together during a timely student-support conversation.","textChars":117,"textLines":1,"bbox":[126,359,455,46]}
+{"kind":"shape","id":"sh/xcjihsb2","slide":2,"bbox":[78,454,29,29]}
+{"kind":"textbox","id":"sh/a98z6dcb","slide":2,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[78,454,29,29]}
+{"kind":"textbox","id":"sh/vah0fitw","slide":2,"text":"Inconsistent intervention","textPreview":"Inconsistent intervention","textChars":25,"textLines":1,"bbox":[126,448,430,28]}
+{"kind":"textbox","id":"sh/8nqh4nul","slide":2,"text":"Even when risk is spotted, teams need a practical and documented plan—not simply another warning flag.","textPreview":"Even when risk is spotted, teams need a practical and documented plan—not simply another warning flag.","textChars":102,"textLines":1,"bbox":[126,477,455,46]}
+{"kind":"shape","id":"sh/9ozidsb6","slide":2,"bbox":[700,225,460,270]}
+{"kind":"textbox","id":"sh/p4ryh4nu","slide":2,"text":"The project question","textPreview":"The project question","textChars":20,"textLines":1,"bbox":[735,259,350,26]}
+{"kind":"textbox","id":"sh/o3ix8zm9","slide":2,"text":"How can an institution turn scattered student signals into clear, early and actionable interventions?","textPreview":"How can an institution turn scattered student signals into clear, early and actionable interventions?","textChars":101,"textLines":1,"bbox":[735,308,350,106]}
+{"kind":"textbox","id":"sh/329gfe5o","slide":2,"text":"EduShield AI brings the evidence, the risk signal and the recommended next step into one workflow.","textPreview":"EduShield AI brings the evidence, the risk signal and the recommended next step into one workflow.","textChars":98,"textLines":1,"bbox":[735,438,350,42]}
+{"kind":"notes","id":"nt/hrm59k","slide":2,"text":""}
+{"kind":"slide","id":"sl/19hnof","slide":3,"title":"OBJECTIVES","textShapes":18}
+{"kind":"shape","id":"sh/1sv2d8b6","slide":3,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/upkj2dcv","slide":3,"text":"OBJECTIVES","textPreview":"OBJECTIVES","textChars":10,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/fqt0bitg","slide":3,"text":"The project turns data into an intervention workflow","textPreview":"The project turns data into an intervention workflow","textChars":52,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/ofm18nux","slide":3,"text":"The goal is not only to score risk, but to make the response easier for staff.","textPreview":"The goal is not only to score risk, but to make the response easier for staff.","textChars":78,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/pgv2hsbi","slide":3,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/2t4j6dcr","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"shape","id":"sh/3edkfitc","slide":3,"bbox":[64,218,535,138]}
+{"kind":"textbox","id":"sh/kji1wjut","slide":3,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[90,242,52,24]}
+{"kind":"textbox","id":"sh/5kbi5ovy","slide":3,"text":"Unify core signals","textPreview":"Unify core signals","textChars":18,"textLines":1,"bbox":[90,273,425,28]}
+{"kind":"textbox","id":"sh/5onulgfa","slide":3,"text":"Combine attendance, assessment performance and mentor notes into a student profile.","textPreview":"Combine attendance, assessment performance and mentor notes into a student profile.","textChars":83,"textLines":1,"bbox":[90,308,456,35]}
+{"kind":"shape","id":"sh/knetcbep","slide":3,"bbox":[637,218,535,138]}
+{"kind":"textbox","id":"sh/jm5cj6x4","slide":3,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[663,242,52,24]}
+{"kind":"textbox","id":"sh/ilwbalwj","slide":3,"text":"Classify risk","textPreview":"Classify risk","textChars":13,"textLines":1,"bbox":[663,273,425,28]}
+{"kind":"textbox","id":"sh/ts7up0f6","slide":3,"text":"Calculate a transparent risk score and group students into high, medium and low risk.","textPreview":"Calculate a transparent risk score and group students into high, medium and low risk.","textChars":85,"textLines":1,"bbox":[663,308,456,35]}
+{"kind":"shape","id":"sh/srytgvel","slide":3,"bbox":[64,394,535,138]}
+{"kind":"textbox","id":"sh/7qpcnqx0","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[90,418,52,24]}
+{"kind":"textbox","id":"sh/6pwbelwv","slide":3,"text":"Guide support","textPreview":"Guide support","textChars":13,"textLines":1,"bbox":[90,449,425,28]}
+{"kind":"textbox","id":"sh/hg7ut0fi","slide":3,"text":"Generate practical intervention recommendations and a mentor-ready report.","textPreview":"Generate practical intervention recommendations and a mentor-ready report.","textChars":74,"textLines":1,"bbox":[90,484,456,35]}
+{"kind":"shape","id":"sh/gvytkvex","slide":3,"bbox":[637,394,535,138]}
+{"kind":"textbox","id":"sh/0z6dgjmt","slide":3,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[663,418,52,24]}
+{"kind":"textbox","id":"sh/10fepone","slide":3,"text":"Make action visible","textPreview":"Make action visible","textChars":19,"textLines":1,"bbox":[663,449,425,28]}
+{"kind":"textbox","id":"sh/exove943","slide":3,"text":"Offer a simple dashboard for filtering, reviewing and prioritising students.","textPreview":"Offer a simple dashboard for filtering, reviewing and prioritising students.","textChars":76,"textLines":1,"bbox":[663,484,456,35]}
+{"kind":"shape","id":"sh/fyxwne5o","slide":3,"bbox":[64,572,1132,52]}
+{"kind":"textbox","id":"sh/onqxkjm5","slide":3,"text":"Success means staff can move from “Who is at risk?” to “What should we do next?” in one view.","textPreview":"Success means staff can move from “Who is at risk?” to “What should we do next?” in one view.","textChars":93,"textLines":1,"bbox":[90,584,1060,28]}
+{"kind":"notes","id":"nt/19hnof","slide":3,"text":""}
+{"kind":"slide","id":"sl/ptxqau","slide":4,"title":"LITERATURE SURVEY","textShapes":12}
+{"kind":"shape","id":"sh/tsfmx4bi","slide":4,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/6p4329s7","slide":4,"text":"LITERATURE SURVEY","textPreview":"LITERATURE SURVEY","textChars":17,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/7qx4vets","slide":4,"text":"Existing approaches identify signals—but leave an action gap","textPreview":"Existing approaches identify signals—but leave an action gap","textChars":60,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/gv6l8ja9","slide":4,"text":"The review informed a practical, staff-facing design choice.","textPreview":"The review informed a practical, staff-facing design choice.","textChars":60,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/hwfm1obu","slide":4,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/uto369s3","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"shape","id":"sh/fux4zeto","slide":4,"bbox":[64,225,350,250]}
+{"kind":"shape","id":"sh/4zqlc3a5","slide":4,"bbox":[64,225,350,12]}
+{"kind":"textbox","id":"sh/p0zm5obq","slide":4,"text":"Attendance monitoring","textPreview":"Attendance monitoring","textChars":21,"textLines":1,"bbox":[88,268,295,52]}
+{"kind":"textbox","id":"sh/tcbutg36","slide":4,"text":"Attendance patterns provide a useful early indicator of disengagement, but are rarely sufficient on their own.","textPreview":"Attendance patterns provide a useful early indicator of disengagement, but are rarely sufficient on their own.","textChars":110,"textLines":1,"bbox":[88,338,295,82]}
+{"kind":"shape","id":"sh/sritkbml","slide":4,"bbox":[442,225,350,250]}
+{"kind":"shape","id":"sh/rq9crql0","slide":4,"bbox":[442,225,350,12]}
+{"kind":"textbox","id":"sh/6p0bil4f","slide":4,"text":"Learning analytics","textPreview":"Learning analytics","textChars":18,"textLines":1,"bbox":[466,268,295,52]}
+{"kind":"textbox","id":"sh/1gbux032","slide":4,"text":"Academic performance dashboards support monitoring, yet can overwhelm staff with metrics rather than decisions.","textPreview":"Academic performance dashboards support monitoring, yet can overwhelm staff with metrics rather than decisions.","textChars":111,"textLines":1,"bbox":[466,338,295,82]}
+{"kind":"shape","id":"sh/gf2tovmx","slide":4,"bbox":[820,225,350,250]}
+{"kind":"shape","id":"sh/fetcvqlc","slide":4,"bbox":[820,225,350,12]}
+{"kind":"textbox","id":"sh/edkbml4r","slide":4,"text":"AI-assisted support","textPreview":"AI-assisted support","textChars":19,"textLines":1,"bbox":[844,268,295,52]}
+{"kind":"textbox","id":"sh/hkralwny","slide":4,"text":"Language models can structure case summaries and draft recommendations when grounded in student data.","textPreview":"Language models can structure case summaries and draft recommendations when grounded in student data.","textChars":101,"textLines":1,"bbox":[844,338,295,82]}
+{"kind":"shape","id":"sh/wjytcrmd","slide":4,"bbox":[64,530,1132,70]}
+{"kind":"textbox","id":"sh/832tsbu9","slide":4,"text":"Gap identified: staff need a single view that combines risk signals with a clear, responsible next action.","textPreview":"Gap identified: staff need a single view that combines risk signals with a clear, responsible next action.","textChars":106,"textLines":1,"bbox":[94,548,1060,34]}
+{"kind":"notes","id":"nt/ptxqau","slide":4,"text":""}
+{"kind":"slide","id":"sl/bm8gue","slide":5,"title":"PROPOSED METHODOLOGY","textShapes":27}
+{"kind":"shape","id":"sh/orapwj6h","slide":5,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/nq1onepw","slide":5,"text":"PROPOSED METHODOLOGY","textPreview":"PROPOSED METHODOLOGY","textChars":20,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/mps7u9ob","slide":5,"text":"Five stages connect student data to an informed intervention","textPreview":"Five stages connect student data to an informed intervention","textChars":60,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/1oz6lo7q","slide":5,"text":"A transparent rule-based risk engine provides the foundation; NVIDIA NIM turns the evidence into usable language.","textPreview":"A transparent rule-based risk engine provides the foundation; NVIDIA NIM turns the evidence into usable language.","textChars":113,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/0nq5sj65","slide":5,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/zmhojepk","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"textbox","id":"sh/e18nq9oz","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[256,315,32,34]}
+{"kind":"shape","id":"sh/d0z6h47e","slide":5,"bbox":[64,262,194,162]}
+{"kind":"shape","id":"sh/czq5oz69","slide":5,"bbox":[82,280,32,32]}
+{"kind":"textbox","id":"sh/a5c7apwz","slide":5,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[82,282,32,27]}
+{"kind":"textbox","id":"sh/v6l83udk","slide":5,"text":"Ingest","textPreview":"Ingest","textChars":6,"textLines":1,"bbox":[82,332,158,27]}
+{"kind":"textbox","id":"sh/w7epcze5","slide":5,"text":"Attendance, marks and mentor notes","textPreview":"Attendance, marks and mentor notes","textChars":34,"textLines":1,"bbox":[82,367,155,45]}
+{"kind":"textbox","id":"sh/x8nq54vq","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[486,315,32,34]}
+{"kind":"shape","id":"sh/m1c765w3","slide":5,"bbox":[294,262,194,162]}
+{"kind":"shape","id":"sh/n2l8zado","slide":5,"bbox":[312,280,32,32]}
+{"kind":"textbox","id":"sh/83up8fet","slide":5,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[312,282,32,27]}
+{"kind":"textbox","id":"sh/943q1kve","slide":5,"text":"Prepare","textPreview":"Prepare","textChars":7,"textLines":1,"bbox":[312,332,158,27]}
+{"kind":"textbox","id":"sh/eds725wr","slide":5,"text":"Clean, merge and derive features","textPreview":"Clean, merge and derive features","textChars":32,"textLines":1,"bbox":[312,367,155,45]}
+{"kind":"textbox","id":"sh/ze18vadc","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[716,315,32,34]}
+{"kind":"shape","id":"sh/3ih436t4","slide":5,"bbox":[524,262,194,162]}
+{"kind":"shape","id":"sh/2h8na1cj","slide":5,"bbox":[542,280,32,32]}
+{"kind":"textbox","id":"sh/pkzm5gba","slide":5,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[542,282,32,27]}
+{"kind":"textbox","id":"sh/4jq5cbup","slide":5,"text":"Score","textPreview":"Score","textChars":5,"textLines":1,"bbox":[542,332,158,27]}
+{"kind":"textbox","id":"sh/rmh476tg","slide":5,"text":"Weighted risk engine","textPreview":"Weighted risk engine","textChars":20,"textLines":1,"bbox":[542,367,155,45]}
+{"kind":"textbox","id":"sh/ql8nelcv","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[946,315,32,34]}
+{"kind":"shape","id":"sh/d8jm9gb6","slide":5,"bbox":[754,262,194,162]}
+{"kind":"shape","id":"sh/c7q5gbul","slide":5,"bbox":[772,280,32,32]}
+{"kind":"textbox","id":"sh/7qx4vmtw","slide":5,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[772,282,32,27]}
+{"kind":"textbox","id":"sh/6po32hcb","slide":5,"text":"Recommend","textPreview":"Recommend","textChars":9,"textLines":1,"bbox":[772,332,158,27]}
+{"kind":"textbox","id":"sh/wv21wna9","slide":5,"text":"NVIDIA NIM intervention report","textPreview":"NVIDIA NIM intervention report","textChars":30,"textLines":1,"bbox":[772,367,155,45]}
+{"kind":"shape","id":"sh/xwb25sru","slide":5,"bbox":[984,262,194,162]}
+{"kind":"shape","id":"sh/atkjuds3","slide":5,"bbox":[1002,280,32,32]}
+{"kind":"textbox","id":"sh/vutk3i9o","slide":5,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1002,282,32,27]}
+{"kind":"textbox","id":"sh/8r21s3ad","slide":5,"text":"Act","textPreview":"Act","textChars":3,"textLines":1,"bbox":[1002,332,158,27]}
+{"kind":"textbox","id":"sh/9sb218ry","slide":5,"text":"Dashboard review and follow-up","textPreview":"Dashboard review and follow-up","textChars":30,"textLines":1,"bbox":[1002,367,155,45]}
+{"kind":"shape","id":"sh/mp0jqds7","slide":5,"bbox":[64,510,1132,86]}
+{"kind":"textbox","id":"sh/nqtkzy9s","slide":5,"text":"Risk score weighting","textPreview":"Risk score weighting","textChars":20,"textLines":1,"bbox":[91,529,210,24]}
+{"kind":"textbox","id":"sh/snml47ah","slide":5,"text":"Attendance 40%  •  Assessment 40%  •  Mentor sentiment 20%","textPreview":"Attendance 40%  •  Assessment 40%  •  Mentor sentiment 20%","textChars":58,"textLines":1,"bbox":[91,555,650,24]}
+{"kind":"textbox","id":"sh/tov2dcr2","slide":5,"text":"Human review remains essential before any intervention is made.","textPreview":"Human review remains essential before any intervention is made.","textChars":63,"textLines":1,"bbox":[790,543,354,34]}
+{"kind":"notes","id":"nt/bm8gue","slide":5,"text":""}
+{"kind":"slide","id":"sl/db3kxy","slide":6,"title":"EXPECTED OUTCOMES","textShapes":14}
+{"kind":"shape","id":"sh/vql0n6d0","slide":6,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/wruhwrel","slide":6,"text":"EXPECTED OUTCOMES","textPreview":"EXPECTED OUTCOMES","textChars":17,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/xs3ipwvq","slide":6,"text":"A clearer path from insight to student support","textPreview":"A clearer path from insight to student support","textChars":46,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/m1szqhw3","slide":6,"text":"The expected outputs are designed to be useful to mentors, programme teams and student support staff.","textPreview":"The expected outputs are designed to be useful to mentors, programme teams and student support staff.","textChars":101,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/nm10jmxo","slide":6,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/8nahsre9","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"shape","id":"sh/9ojilwfu","slide":6,"bbox":[64,220,540,126]}
+{"kind":"shape","id":"sh/6xwj2lwn","slide":6,"bbox":[88,247,14,72]}
+{"kind":"textbox","id":"sh/7i50vqd8","slide":6,"text":"Earlier conversations","textPreview":"Earlier conversations","textChars":21,"textLines":1,"bbox":[126,249,410,27]}
+{"kind":"textbox","id":"sh/zuhw7ep4","slide":6,"text":"Students with emerging attendance or assessment issues can be reviewed sooner.","textPreview":"Students with emerging attendance or assessment issues can be reviewed sooner.","textChars":78,"textLines":1,"bbox":[126,284,430,38]}
+{"kind":"shape","id":"sh/yt8vy98j","slide":6,"bbox":[634,220,540,126]}
+{"kind":"shape","id":"sh/lwze9o7u","slide":6,"bbox":[658,247,14,72]}
+{"kind":"textbox","id":"sh/0vqd0jqp","slide":6,"text":"Consistent triage","textPreview":"Consistent triage","textChars":17,"textLines":1,"bbox":[696,249,410,27]}
+{"kind":"textbox","id":"sh/ny1wbyp0","slide":6,"text":"Shared risk tiers make prioritisation clearer across the cohort.","textPreview":"Shared risk tiers make prioritisation clearer across the cohort.","textChars":64,"textLines":1,"bbox":[696,284,430,38]}
+{"kind":"shape","id":"sh/mx8v2t8f","slide":6,"bbox":[64,378,540,126]}
+{"kind":"shape","id":"sh/9kjedo76","slide":6,"bbox":[88,405,14,72]}
+{"kind":"textbox","id":"sh/8zax4jql","slide":6,"text":"Actionable reports","textPreview":"Actionable reports","textChars":18,"textLines":1,"bbox":[126,407,410,27]}
+{"kind":"textbox","id":"sh/vm1wfypc","slide":6,"text":"AI-assisted drafts give staff a structured starting point for intervention planning.","textPreview":"AI-assisted drafts give staff a structured starting point for intervention planning.","textChars":84,"textLines":1,"bbox":[126,442,430,38]}
+{"kind":"shape","id":"sh/alsf6tor","slide":6,"bbox":[634,378,540,126]}
+{"kind":"shape","id":"sh/6hczyxsz","slide":6,"bbox":[658,405,14,72]}
+{"kind":"textbox","id":"sh/7i5g729k","slide":6,"text":"Auditable follow-up","textPreview":"Auditable follow-up","textChars":19,"textLines":1,"bbox":[696,407,410,27]}
+{"kind":"textbox","id":"sh/sjeh07qp","slide":6,"text":"Recommendations and mentor notes create a clear record of the response.","textPreview":"Recommendations and mentor notes create a clear record of the response.","textChars":71,"textLines":1,"bbox":[696,442,430,38]}
+{"kind":"textbox","id":"sh/tkny9cra","slide":6,"text":"Expected value: a practical early-warning workflow that supports—not replaces—professional judgement.","textPreview":"Expected value: a practical early-warning workflow that supports—not replaces—professional judgement.","textChars":101,"textLines":1,"bbox":[64,566,1080,28]}
+{"kind":"notes","id":"nt/db3kxy","slide":6,"text":""}
+{"kind":"slide","id":"sl/i8s19i","slide":7,"title":"DEMONSTRATION","textShapes":23}
+{"kind":"shape","id":"sh/zydozmlw","slide":7,"bbox":[0,0,1280,12]}
+{"kind":"textbox","id":"sh/0z6p8rm1","slide":7,"text":"DEMONSTRATION","textPreview":"DEMONSTRATION","textChars":13,"textLines":1,"bbox":[64,44,600,20]}
+{"kind":"textbox","id":"sh/l0f61w3m","slide":7,"text":"A mentor can move from a cohort signal to an intervention plan","textPreview":"A mentor can move from a cohort signal to an intervention plan","textChars":62,"textLines":1,"bbox":[64,78,1060,56]}
+{"kind":"textbox","id":"sh/m1o7a147","slide":7,"text":"The live demonstration shows the dashboard working end to end.","textPreview":"The live demonstration shows the dashboard working end to end.","textChars":62,"textLines":1,"bbox":[64,141,970,44]}
+{"kind":"textbox","id":"sh/n2xo36ls","slide":7,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/836pcbmd","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"shape","id":"sh/94f65g3y","slide":7,"bbox":[72,210,42,42]}
+{"kind":"textbox","id":"sh/apo7el4j","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[72,217,42,28]}
+{"kind":"textbox","id":"sh/vqxo76lo","slide":7,"text":"Open the dashboard","textPreview":"Open the dashboard","textChars":18,"textLines":1,"bbox":[138,212,250,25]}
+{"kind":"textbox","id":"sh/n65c32hk","slide":7,"text":"View cohort metrics, priority actions and the student risk list.","textPreview":"View cohort metrics, priority actions and the student risk list.","textChars":64,"textLines":1,"bbox":[138,239,620,30]}
+{"kind":"shape","id":"sh/m5wbuxgz","slide":7,"bbox":[72,284,42,42]}
+{"kind":"textbox","id":"sh/987u5czq","slide":7,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[72,291,42,28]}
+{"kind":"textbox","id":"sh/87ytw7y5","slide":7,"text":"Filter or search","textPreview":"Filter or search","textChars":16,"textLines":1,"bbox":[138,286,250,25]}
+{"kind":"textbox","id":"sh/z25czih8","slide":7,"text":"Focus on high-risk students or locate a specific student.","textPreview":"Focus on high-risk students or locate a specific student.","textChars":57,"textLines":1,"bbox":[138,313,620,30]}
+{"kind":"shape","id":"sh/ehwbqd03","slide":7,"bbox":[72,358,42,42]}
+{"kind":"textbox","id":"sh/l4nu1sze","slide":7,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[72,365,42,28]}
+{"kind":"textbox","id":"sh/03etsnyt","slide":7,"text":"Open a profile","textPreview":"Open a profile","textChars":14,"textLines":1,"bbox":[138,360,250,25]}
+{"kind":"textbox","id":"sh/jypcbmhs","slide":7,"text":"Review attendance, assessment and mentor evidence together.","textPreview":"Review attendance, assessment and mentor evidence together.","textChars":59,"textLines":1,"bbox":[138,387,620,30]}
+{"kind":"shape","id":"sh/idgb2hg7","slide":7,"bbox":[72,432,42,42]}
+{"kind":"textbox","id":"sh/e54nq54r","slide":7,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[72,439,42,28]}
+{"kind":"textbox","id":"sh/f6doja5c","slide":7,"text":"Draft a report","textPreview":"Draft a report","textChars":14,"textLines":1,"bbox":[138,434,250,25]}
+{"kind":"textbox","id":"sh/g7m5sfmh","slide":7,"text":"Generate a structured intervention recommendation through NVIDIA NIM.","textPreview":"Generate a structured intervention recommendation through NVIDIA NIM.","textChars":69,"textLines":1,"bbox":[138,461,620,30]}
+{"kind":"shape","id":"sh/18v6lkn2","slide":7,"bbox":[72,506,42,42]}
+{"kind":"textbox","id":"sh/294nup4n","slide":7,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[72,513,42,28]}
+{"kind":"textbox","id":"sh/3adonu58","slide":7,"text":"Confirm next action","textPreview":"Confirm next action","textChars":19,"textLines":1,"bbox":[138,508,250,25]}
+{"kind":"textbox","id":"sh/ob65wzmt","slide":7,"text":"Use the report as a starting point for human-led support and follow-up.","textPreview":"Use the report as a starting point for human-led support and follow-up.","textChars":71,"textLines":1,"bbox":[138,535,620,30]}
+{"kind":"shape","id":"sh/pcf6p4ne","slide":7,"bbox":[820,220,330,286]}
+{"kind":"textbox","id":"sh/idkniloj","slide":7,"text":"Live demo focus","textPreview":"Live demo focus","textChars":15,"textLines":1,"bbox":[850,251,240,22]}
+{"kind":"textbox","id":"sh/jet4bq54","slide":7,"text":"One student.\nOne evidence trail.\nOne clear next step.","textPreview":"One student. | One evidence trail. | One clear next step.","textChars":53,"textLines":3,"bbox":[850,300,240,112]}
+{"kind":"shape","id":"sh/l8zqh87m","slide":7,"bbox":[850,439,205,40]}
+{"kind":"textbox","id":"sh/07q9o361","slide":7,"text":"Draft intervention plan →","textPreview":"Draft intervention plan →","textChars":25,"textLines":1,"bbox":[868,449,172,20]}
+{"kind":"notes","id":"nt/i8s19i","slide":7,"text":""}
+{"kind":"slide","id":"sl/9k6azm","slide":8,"title":"EduShield AI","textShapes":9}
+{"kind":"textbox","id":"sh/q943m9wv","slide":8,"text":"EduShield AI","textPreview":"EduShield AI","textChars":12,"textLines":1,"bbox":[64,85,590,70]}
+{"kind":"textbox","id":"sh/dcvmhovm","slide":8,"text":"An early-intervention workflow built around evidence, clarity and human judgement.","textPreview":"An early-intervention workflow built around evidence, clarity and human judgement.","textChars":82,"textLines":1,"bbox":[64,174,600,75]}
+{"kind":"shape","id":"sh/cbmloju1","slide":8,"bbox":[64,306,770,182]}
+{"kind":"textbox","id":"sh/36d4redk","slide":8,"text":"Presentation readiness","textPreview":"Presentation readiness","textChars":22,"textLines":1,"bbox":[94,334,280,24]}
+{"kind":"textbox","id":"sh/2543i9wz","slide":8,"text":"Problem relevance  •  Literature gap  •  Clear objectives  •  Technical methodology  •  Live demonstration","textPreview":"Problem relevance  •  Literature gap  •  Clear objectives  •  Technical methodology  •  Live demonstration","textChars":106,"textLines":1,"bbox":[94,381,676,64]}
+{"kind":"textbox","id":"sh/p8vmd4va","slide":8,"text":"The project makes student risk visible—and makes the next step easier to take.","textPreview":"The project makes student risk visible—and makes the next step easier to take.","textChars":78,"textLines":1,"bbox":[64,552,825,38]}
+{"kind":"textbox","id":"sh/o7mlkjep","slide":8,"text":"Questions & discussion","textPreview":"Questions & discussion","textChars":22,"textLines":1,"bbox":[64,620,420,26]}
+{"kind":"shape","id":"sh/fit4nud8","slide":8,"bbox":[930,156,198,198]}
+{"kind":"textbox","id":"sh/ehk3epwn","slide":8,"text":"Support\nbefore\nsetback","textPreview":"Support | before | setback","textChars":22,"textLines":3,"bbox":[960,192,138,114]}
+{"kind":"textbox","id":"sh/0fu98nih","slide":8,"text":"EduShield AI  •  Student risk detection & early intervention","textPreview":"EduShield AI  •  Student risk detection & early intervention","textChars":60,"textLines":1,"bbox":[64,679,800,18]}
+{"kind":"textbox","id":"sh/lgnah8zm","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1168,679,48,18]}
+{"kind":"notes","id":"nt/9k6azm","slide":8,"text":""}
